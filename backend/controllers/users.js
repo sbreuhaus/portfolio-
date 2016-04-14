@@ -41,4 +41,11 @@ router.put('/edit', function(req, res){
   usersCollection.update(old, updateTo);
 });
 
+router.delete('/delete', function(req, res){
+  usersCollection.remove([req.body], function(err, data){
+    if (err){
+      console.log("ERROR!!", err);
+    } 
+  });
+});
 module.exports = router;
