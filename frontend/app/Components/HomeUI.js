@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomeUI = React.createClass({
-  render: function(){
+  render (){
     return (
       <div>
       </div>
