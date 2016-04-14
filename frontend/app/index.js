@@ -4,5 +4,5 @@ import routes from './config/routes.js';
 
 ReactDOM.render(
   routes,
-  document.getElementById('react-app')
-); 
+  document.getElementById('app')
+);
