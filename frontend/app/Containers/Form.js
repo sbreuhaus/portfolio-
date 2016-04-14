@@ -1,13 +1,15 @@
 import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import FormUI from '../Components/FormUI';
+import AddProject from '../stateless/AddProjectUI'
 
 const Form = React.createClass({
   getInitialState(){
     return {
       logoName: '',
       linkedIn: '',
-      github: ''
+      github: '',
+      project: ''
     }
   },
   componentDidMount(){
@@ -61,11 +63,35 @@ const Form = React.createClass({
         helpers.users.updateUser(userEdit);
       }
   },
+  handleProjectChoice (e){
+    console.log('handleProjectChoice', e.nativeEvent);
+    this.setState({
+      project: e.target.value
+    })
+    console.log('state is', this.state.project);
+
+  },
+  handleProject(){
+    switch (this.state.project) {
+      case 'addProject':
+      console.log('add Project');
+        return(
+          <AddProject />
+        );
+        break;
+      default:
+    }
+  },
   render (){
     return (
-      <FormUI onInput={this.handleInput}
-        onAjaxCall={this.handleAjaxCall} logoProps={this.state.logoName}
-        linkedInProps={this.state.linkedIn} githubProps={this.state.github}/>
+      <div>
+        <FormUI onInput={this.handleInput}
+          onAjaxCall={this.handleAjaxCall} logoProps={this.state.logoName}
+          linkedInProps={this.state.linkedIn} githubProps={this.state.github}
+          onProjectChoice={this.handleProjectChoice}
+          />
+        {this.handleProject()}
+      </div>
     )
   }
 })

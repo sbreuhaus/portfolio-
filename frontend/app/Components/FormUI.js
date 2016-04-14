@@ -27,6 +27,16 @@ const FormUI = React.createClass({
         <button type='button' name='create' onClick={this.props.onAjaxCall}>Create</button><br/>
         <button type='button' name='update' onClick={this.props.onAjaxCall}>Edit</button><br/>
         <button type='button' name='delete' onClick={this.props.onAjaxCall}>Delete</button>
+
+        <hr/>
+        <h1>Project</h1><br/>
+        <p>please choose among the following:</p>
+        <select onChange={this.props.onProjectChoice}>
+          <option disable > -- select an option -- </option>
+          <option type="radio" name='chosen-radio' value="addProject">Add Project </option>
+          <option type="radio" name='chosen-radio' value="editProject">Edit Project </option>
+          <option type="radio" name='chosen-radio' value="deleteProject">Delete Project</option>
+        </select>
       </div>
 
     );
