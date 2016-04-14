@@ -32,8 +32,8 @@ const Form = React.createClass({
   render (){
     return (
       <FormUI onInput={this.handleInput} />
-    )
+    );
   }
-})
+});
 
 export default Form;
