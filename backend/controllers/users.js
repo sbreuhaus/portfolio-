@@ -29,23 +29,21 @@ router.post('/new', function(req, res){
   });
 });
 
-router.put('/edit', function(req, res){
-  var old = {
-    name: req.body.name
-  };
-  var updateTo = {
-    name: req.body.newName,
-    linkedin: req.body.newLinkedin,
-    github: req.body.newGithub
-  };
-  usersCollection.update(old, updateTo);
+router.put('/update', function(req, res){
+  usersCollection.deleteMany({});
+  usersCollection.insert([req.body], function(err, data){
+    if (err) {
+      console.log(err);
+      res.json("error");
+    } else {
+      console.log('Updated', data);
+      res.json(data);
+    }
+  });
 });
 
 router.delete('/delete', function(req, res){
-  usersCollection.remove([req.body], function(err, data){
-    if (err){
-      console.log("ERROR!!", err);
-    } 
-  });
+  console.log("received request");
+  usersCollection.deleteMany({});
 });
 module.exports = router;

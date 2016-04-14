@@ -1,5 +1,5 @@
 import React from 'react';
-import ajaxHelpers from '../utils/ajaxHelpers';
+import helpers from '../Utils/ajaxHelpers';
 
 const Home = React.createClass({
   getInitialState (){

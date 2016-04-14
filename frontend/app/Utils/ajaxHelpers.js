@@ -5,14 +5,14 @@ const helpers = {
     getUsers(){
       return axios.get('http://localhost:3000/users')
     },
-    addUser:user){
+    addUser(user){
       return axios.post('http://localhost:3000/users/new', user)
     },
     findUser(user){
-      return axios.get('http://localhost:3000/users/' + user.name)
+      return axios.get('http://localhost:3000/users/:' + user.name)
     },
-    deleteUser(user){
-      return axios.delete('http://localhost:3000/users/delete', user.name)
+    deleteUser(){
+      return axios.delete('http://localhost:3000/users/delete')
     },
     updateUser(user){
       return axios.put('http://localhost:3000/users/update', user)
@@ -36,3 +36,5 @@ const helpers = {
     }
   }
 }
+
+export default helpers;
