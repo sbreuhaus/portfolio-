@@ -19,7 +19,7 @@ const Main = (props) => {
         {props.children}
       </main>
       <footer>
-        <p>This is going to be our footer at some point we hope</p>
+        <p>This is going to be our footer</p>
       </footer>
     </div>
   )
