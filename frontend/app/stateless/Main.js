@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Main = () => {
-  return{
+  return(
     <div className="main-container">
 
     </div>
-  }
+  )
 }
 
 

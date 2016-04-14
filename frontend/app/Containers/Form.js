@@ -1,12 +1,11 @@
 import React from 'react';
-
-import FormUI form '../Components/FormUI';
+import FormUI from '../Components/FormUI';
 
 const Form = React.createClass({
   render (){
-    return {
+    return (
       <FormUI />
-    }
+    )
   }
 })
 

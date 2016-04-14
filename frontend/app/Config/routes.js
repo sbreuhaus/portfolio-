@@ -6,13 +6,13 @@ import Main from '../stateless/Main';
 import Home from '../Containers/Home';
 import Form from '../Containers/Form';
 
-const routes = {
+const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home}/>
       <Route path='form' component={Form}/>
     </Route>
   </Router>
-};
+);
 
 export default routes;

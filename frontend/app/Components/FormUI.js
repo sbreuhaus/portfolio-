@@ -2,9 +2,9 @@ import React from 'react';
 
 const FormUI = React.createClass({
   render (){
-    return {
+    return (
       <p>Hello Papi</p>
-    }
+    )
   }
 })
 
