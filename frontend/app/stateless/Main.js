@@ -6,16 +6,14 @@ const Main = (props) => {
   return(
     <div className="site-external-wrapper">
       <nav>
-        <div>
-          <Link to='/'>
-            <div><span>HOME PAGE</span></div>
-          </Link>
-        </div>
-        <div>
-          <Link to='/form'>
-            <div><span>FORM PAGE</span></div>
-          </Link>
-        </div>
+        <Link to='/'>
+          <button type='button'>HOME PAGE</button>
+        </Link>
+        <br>
+        </br>
+        <Link to='/form'>
+          <button type='button'>FORM PAGE</button>
+        </Link>
       </nav>
       <main>
         {props.children}
