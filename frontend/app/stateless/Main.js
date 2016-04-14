@@ -13,14 +13,13 @@ const Main = (props) => {
         </br>
         <Link to='/form'>
           <button type='button'>FORM PAGE</button>
-
         </Link>
       </nav>
       <main>
         {props.children}
       </main>
       <footer>
-        <p>This is going to be our footer</p>
+        <p>This is going to be our footer at some point we hope</p>
       </footer>
     </div>
   )
