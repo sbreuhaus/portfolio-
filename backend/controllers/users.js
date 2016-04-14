@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
+// getting all users
 router.get('/', function(req, res){
   usersCollection.find().toArray(function(err, result){
     if (err) {
@@ -14,6 +15,30 @@ router.get('/', function(req, res){
       res.json('no users found');
     }
   });
+});
+
+router.post('/new', function(req, res){
+  usersCollection.insert([req.body], function(err, data){
+    if (err) {
+      console.log(err);
+      res.json("error");
+    } else {
+      console.log('Inserted', data);
+      res.json(data);
+    }
+  });
+});
+
+router.put('/edit', function(req, res){
+  var old = {
+    name: req.body.name
+  };
+  var updateTo = {
+    name: req.body.newName,
+    linkedin: req.body.newLinkedin,
+    github: req.body.newGithub
+  };
+  usersCollection.update(old, updateTo);
 });
 
 module.exports = router;
