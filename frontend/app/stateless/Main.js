@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Main = React.createClass({
-  render: function(){
-    return (
-      <div className="main-container">
+const Main = () => {
+  return{
+    <div className="main-container">
 
-      </div>
-    )
+    </div>
   }
-});
+}
+
 
 export default Main;

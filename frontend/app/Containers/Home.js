@@ -1,9 +1,8 @@
 import React from 'react';
-import _ from 'lodash';
 import ajaxHelpers from '../utils/ajaxHelpers';
 
 const Home = React.createClass({
-  getInitialState: function(){
+  getInitialState (){
     return {
 
     }
@@ -11,6 +10,7 @@ const Home = React.createClass({
   render: function(){
     return (
       <div>
+        HOME UI
       </div>
     );
   }
