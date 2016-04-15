@@ -15,6 +15,10 @@
   margin-left: 10%;
 }
 
+.nameDisplay:hover {
+  cursor: pointer;
+}
+
 .linkedinDisplay {
   display: absolute;
   float: left;
