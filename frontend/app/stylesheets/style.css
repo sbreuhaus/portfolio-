@@ -21,10 +21,56 @@
   margin-left: 60.5%;
 }
 
+.skillList {
+  display: flex;
+  width: 80%;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 90px;
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 880px;
+  color: #373737;
+}
+
+.skillItem {
+  width: 300px;
+  padding-left: 1px;
+}
+
+.skillItem:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #E8E8E8;
+}
+
 .projectsDisplay {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 80%;
   margin-left: 10%;
+}
+
+.projectTitle {
+  background-color: #8D8D8D;
+  margin-top: -20px;
+  font-size: 14px;
+  color: white;
+  z-index: 900;
+  opacity: 0.7;
+  padding-left: 2px;
+}
+
+.projectItem:hover {
+  opacity: 0.75;
+  -webkit-animation: blur(2px);
+  -moz-animation: blur(2px);
+  -o-animation: blur(2px);
+  -ms-animation: blur(2px);
+  animation: blur(2px);
 }

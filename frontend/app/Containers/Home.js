@@ -42,6 +42,9 @@ const Home = React.createClass({
       console.log('these are the projects: ', this.state.projects);
     }.bind(this))
   },
+  handleFilterProjects(e){
+    
+  }
   render: function(){
     return (
       <div>
