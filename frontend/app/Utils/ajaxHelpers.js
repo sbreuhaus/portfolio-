@@ -25,13 +25,14 @@ const helpers = {
     addProject(project){
       return axios.post('http://localhost:3000/projects/new', project)
     },
-    findProject(project){
-      return axios.get('http://localhost:3000/projects/' + project.name)
+    findProject(projectID){
+      return axios.get('http://localhost:3000/projects/find/' + projectID)
     },
     deleteProject(project){
       return axios.delete('http://localhost:3000/projects/delete', project.name)
     },
     updateProject(project){
+      console.log('ft called');
       return axios.put('http://localhost:3000/projects/update', project)
     }
   }

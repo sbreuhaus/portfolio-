@@ -2,8 +2,8 @@ import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import FormUI from '../Components/FormUI';
 import AddProject from '../stateless/AddProjectUI';
-import EditProject from '../Components/EditProjectUI';
-import DeleteProject from '../Components/DeleteProjectUI';
+import EditProject from '../Containers/EditProject';
+import DeleteProject from '../Containers/DeleteProject';
 
 const Form = React.createClass({
   getInitialState(){
@@ -12,12 +12,13 @@ const Form = React.createClass({
       linkedIn: '',
       github: '',
       project: '',
-      allProjects: []
+      projectTitle: '',
+      projectThumbnail:'',
+      projectSkills: ''
     }
   },
   componentDidMount(){
     helpers.users.getUsers().then(function(res){
-      console.log("this is the res.data", res.data);
       if (res.data.length === 1) {
         console.log('got more than 1 in the database!');
         this.setState({
@@ -29,11 +30,13 @@ const Form = React.createClass({
       }
     }.bind(this))
   },
+  //handles input in navigator and Projects
   handleInput(e){
     this.setState({
       [e.target.name]: e.target.value
     });
   },
+  //handles ajax calls for navigator
   handleAjaxCall(e){
     switch (e.target.name) {
       case 'create':
@@ -66,41 +69,38 @@ const Form = React.createClass({
         helpers.users.updateUser(userEdit);
       }
   },
+  // handles CRUD choice for project
   handleProjectChoice (e){
-    console.log('handleProjectChoice', e.nativeEvent);
     this.setState({
       project: e.target.value
     })
-    console.log('state is', this.state.project);
   },
+  // handles form display for project CRUD choice
   handleProject(){
     switch (this.state.project) {
       case 'addProject':
-        console.log('add Project');
-        return(
-          <AddProject />
-        );
-        break;
+        return <AddProject onInput={this.handleInput} onAddProject={this.handleAddProject}/>
+      break;
       case 'editProject':
-        console.log('edit Project');
-        helpers.projects.getProjects()
-        .then(function(res){
-          // console.log('getting all projects', res.data);
-          this.setState({
-            allProjects: res.data
-          });
-        }.bind(this));
-        return (
-          <EditProject allProjects={this.state.allProjects}/>
-        )
-        break;
+        console.log('all projects are',this.state.allProjects);
+        return <EditProject allProjects={this.state.allProjects}/>
+      break;
       case 'deleteProject':
-      console.log('delete project');
-        return(
-          <DeleteProject />
-        )
-      default:
+        return <DeleteProject />
+      break;
     }
+  },
+  handleAddProject (){
+    // splitting skills
+    const skillsArray = this.state.projectSkills.split(" ");
+    // creating object to insert to db
+    const projectToAdd = {
+      title: this.state.projectTitle,
+      thumbnail: this.state.projectThumbnail,
+      skills: skillsArray
+    };
+    // inserting obj in db
+    helpers.projects.addProject(projectToAdd);
   },
   render (){
     return (
@@ -109,8 +109,8 @@ const Form = React.createClass({
           onAjaxCall={this.handleAjaxCall} logoProps={this.state.logoName}
           linkedInProps={this.state.linkedIn} githubProps={this.state.github}
           onProjectChoice={this.handleProjectChoice}
+          onProject={this.handleProject}
           />
-        {this.handleProject()}
       </div>
     )
   }

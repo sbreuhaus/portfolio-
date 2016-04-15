@@ -1,13 +1,13 @@
 import React from 'react';
 
-const AddProject = () => {
+const AddProject = (props) => {
   return (
     <div>
       <p>Add Project</p>
-      <input placeholder="title"></input>
-      <input placeholder="image"></input>
-      <input placeholder="skills"></input>
-      <button type="button">Add Project</button>
+      <input placeholder="title" onChange={props.onInput} name="projectTitle"></input>
+      <input placeholder="image" onChange={props.onInput} name="projectThumbnail"></input>
+      <input placeholder="skills" onChange={props.onInput} name="projectSkills"></input><br/>
+      <button type="button" onClick={props.onAddProject}>Add Project</button>
     </div>
   );
 };
