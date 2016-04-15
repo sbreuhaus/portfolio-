@@ -33,10 +33,11 @@ const FormUI = React.createClass({
         <p>please choose among the following:</p>
         <select onChange={this.props.onProjectChoice}>
           <option disable > -- select an option -- </option>
-          <option type="radio" name='chosen-radio' value="addProject">Add Project </option>
-          <option type="radio" name='chosen-radio' value="editProject">Edit Project </option>
-          <option type="radio" name='chosen-radio' value="deleteProject">Delete Project</option>
+          <option type="radio" name='project' value="addProject">Add Project </option>
+          <option type="radio" name='project' value="editProject">Edit Project </option>
+          <option type="radio" name='project' value="deleteProject">Delete Project</option>
         </select>
+        {this.props.onProject()}
       </div>
 
     );
