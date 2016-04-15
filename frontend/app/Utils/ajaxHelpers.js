@@ -28,11 +28,10 @@ const helpers = {
     findProject(projectID){
       return axios.get('http://localhost:3000/projects/find/' + projectID)
     },
-    deleteProject(project){
-      return axios.delete('http://localhost:3000/projects/delete', project.name)
+    deleteProject(projectID){
+      return axios.delete('http://localhost:3000/projects/delete/'+ projectID)
     },
     updateProject(project){
-      console.log('ft called');
       return axios.put('http://localhost:3000/projects/update', project)
     }
   }

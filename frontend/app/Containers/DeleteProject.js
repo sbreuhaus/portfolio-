@@ -5,7 +5,8 @@ import DeleteProjectUI from '../stateless/DeleteProjectUI';
 const DeleteProject = React.createClass({
   getInitialState () {
     return {
-      allProjects: []
+      allProjects: [],
+      projectID: ''
     }
   },
   componentDidMount(){
@@ -16,9 +17,22 @@ const DeleteProject = React.createClass({
       });
     }.bind(this));
   },
+  handleDeleteProject(){
+    helpers.projects.deleteProject(this.state.projectID);
+  },
+  handleAutoFill(e){
+    //setting old id to edit
+    this.setState({
+      projectID: e.target.value
+    });
+  },
   render (){
     return (
-      <DeleteProjectUI allProjects={this.state.allProjects} />
+      <DeleteProjectUI
+        allProjects={this.state.allProjects}
+        onDeleteProject={this.handleDeleteProject}
+        onAutoFill={this.handleAutoFill}
+      />
     )
   }
 });

@@ -57,10 +57,10 @@ router.post('/new', function(req, res){
   });
 });
 
-
-router.delete('/delete', function(req, res){
-  console.log("received request");
-  projectsCollection.deleteMany({});
+router.delete('/delete/:id', function(req, res){
+  console.log('Delete gotten');
+  console.log('delete is is ', req.params.id);
+    projectsCollection.remove({"_id": ObjectId(req.params.id)});
 });
 
 module.exports = router;
