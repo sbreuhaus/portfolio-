@@ -13,7 +13,6 @@ const Form = React.createClass({
       github: '',
       project: '',
       allProjects: [],
-      fuckthis = ''
     }
   },
   componentDidMount(){
