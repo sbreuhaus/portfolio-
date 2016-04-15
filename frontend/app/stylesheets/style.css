@@ -58,6 +58,7 @@
   flex-wrap: wrap;
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 50px;
 }
 
 .projectTitle {
@@ -81,4 +82,9 @@
   -o-animation: blur(2px);
   -ms-animation: blur(2px);
   animation: blur(2px);
+}
+
+.footer {
+  font-size: 12px;
+  margin-left: 10%;
 }
