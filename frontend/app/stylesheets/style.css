@@ -1,0 +1,30 @@
+* {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+}
+
+.navigatorDisplay {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.nameDisplay {
+  float: left;
+  margin-left: 10%;
+}
+
+.linkedinDisplay {
+  display: absolute;
+  float: left;
+  margin-left: 60.5%;
+}
+
+.projectsDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+}
