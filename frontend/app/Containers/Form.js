@@ -1,7 +1,9 @@
 import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import FormUI from '../Components/FormUI';
-import AddProject from '../stateless/AddProjectUI'
+import AddProject from '../stateless/AddProjectUI';
+import EditProject from '../Components/EditProjectUI';
+import DeleteProject from '../Components/DeleteProjectUI';
 
 const Form = React.createClass({
   getInitialState(){
@@ -9,7 +11,8 @@ const Form = React.createClass({
       logoName: '',
       linkedIn: '',
       github: '',
-      project: ''
+      project: '',
+      allProjects: []
     }
   },
   componentDidMount(){
@@ -69,16 +72,33 @@ const Form = React.createClass({
       project: e.target.value
     })
     console.log('state is', this.state.project);
-
   },
   handleProject(){
     switch (this.state.project) {
       case 'addProject':
-      console.log('add Project');
+        console.log('add Project');
         return(
           <AddProject />
         );
         break;
+      case 'editProject':
+        console.log('edit Project');
+        helpers.projects.getProjects()
+        .then(function(res){
+          // console.log('getting all projects', res.data);
+          this.setState({
+            allProjects: res.data
+          });
+        }.bind(this));
+        return (
+          <EditProject allProjects={this.state.allProjects}/>
+        )
+        break;
+      case 'deleteProject':
+      console.log('delete project');
+        return(
+          <DeleteProject />
+        )
       default:
     }
   },
@@ -94,6 +114,6 @@ const Form = React.createClass({
       </div>
     )
   }
-})
+});
 
 export default Form;
