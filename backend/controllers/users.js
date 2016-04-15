@@ -2,22 +2,23 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
+// getting all users
 router.get('/', function(req, res){
-  projectsCollection.find().toArray(function(err, result){
+  usersCollection.find().toArray(function(err, result){
     if (err) {
       console.log("ERROR!", err);
       res.json("error");
     } else if (result.length) {
       res.json(result);
     } else {
-      console.log('No document(s) found with defined "find" criteria');
-      res.json('no projects found');
+      console.log('Do document(s) found with defined "find" criteria');
+      res.json('no users found');
     }
   });
 });
 
 router.post('/new', function(req, res){
-  projectsCollection.insert([req.body], function(err, data){
+  usersCollection.insert([req.body], function(err, data){
     if (err) {
       console.log(err);
       res.json("error");
@@ -29,8 +30,8 @@ router.post('/new', function(req, res){
 });
 
 router.put('/update', function(req, res){
-  projectsCollection.deleteMany({});
-  projectsCollection.insert([req.body], function(err, data){
+  usersCollection.deleteMany({});
+  usersCollection.insert([req.body], function(err, data){
     if (err) {
       console.log(err);
       res.json("error");
@@ -43,7 +44,6 @@ router.put('/update', function(req, res){
 
 router.delete('/delete', function(req, res){
   console.log("received request");
-  projectsCollection.deleteMany({});
+  usersCollection.deleteMany({});
 });
-
 module.exports = router;

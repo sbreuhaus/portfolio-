@@ -6,8 +6,8 @@ var express             = require('express'),
     MongoClient         = mongodb.MongoClient,
     dbName              = 'portfolio_app',
     mongoURL            = 'mongodb://localhost:27017/' + dbName,
-    contactsController  = require('./controllers/projects.js'),
-    navigatorController = require('./controllers/navigator.js'),
+    projectsController  = require('./controllers/projects.js'),
+    usersController     = require('./controllers/users.js'),
     PORT = 3000;
 
 // MIDDLEWARE
@@ -16,8 +16,8 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
 //ROUTERS
-servers.use('/project', contactsController);
-server.use('/navigator', navigatorController);
+server.use('/projects', projectsController);
+server.use('/users', usersController);
 
 //INITIATING DB
 MongoClient.connect(mongoURL, function(err, db){
@@ -25,8 +25,8 @@ MongoClient.connect(mongoURL, function(err, db){
     else {
       console.log('we have connected');
       //DEFINING COLLECTIONS
-      contactsCollection = db.collection('projects');
-      navigatorCollection = db.collection('navigator');
+      projectsCollection = db.collection('projects');
+      usersCollection = db.collection('users')
 
       //STARTING SERVER
       server.listen(PORT, function(err){
