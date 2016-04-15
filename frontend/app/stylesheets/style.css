@@ -58,10 +58,11 @@
   flex-wrap: wrap;
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 50px;
 }
 
 .projectTitle {
-  background-color: #8D8D8D;
+  background-color: #0A0A0A;
   margin-top: -20px;
   font-size: 14px;
   color: white;
@@ -70,11 +71,20 @@
   padding-left: 2px;
 }
 
+.projectItem {
+  opacity: 0.85;
+}
+
 .projectItem:hover {
-  opacity: 0.75;
+  opacity: 0.6;
   -webkit-animation: blur(2px);
   -moz-animation: blur(2px);
   -o-animation: blur(2px);
   -ms-animation: blur(2px);
   animation: blur(2px);
+}
+
+.footer {
+  font-size: 12px;
+  margin-left: 10%;
 }
