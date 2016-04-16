@@ -43,7 +43,7 @@ const Home = React.createClass({
         skills: skillsArray,
         projects: res.data,
         origProj: res.data
-      }); 
+      });
       origProjList = res.data;
       console.log('origProjList is ', origProjList);
     }.bind(this))
