@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 var navStyle = {
   display: 'inlineBlock'
 };
@@ -30,13 +31,7 @@ const HomeUI = React.createClass({
                 <div className='projectItem' key={index}>
                   <img className='projectImg' src={project.thumbnail}></img>
                   <div className='projectTitle'>{project.title}</div>
-                  <div className='projSkills'>{project.skills.map(
-                      function(obj, key){
-                        return (
-                          <li className='skillPoint' key={key}>{obj}</li>
-                        )
-                      }
-                    )}
+                  <div className='projSkills'>{project.skills}
                   </div>
                 </div>
               )
