@@ -44,6 +44,27 @@ const Home = React.createClass({
       console.log('these are the projects: ', this.state.projects);
     }.bind(this))
   },
+  handleListSkills(skill, index) {
+    return (
+      <li className='skillItem' onClick={this.handleSkillFilter} key={index}>{skill}</li>
+      )
+  },
+  handleListProjects(project, index) {
+    return (
+      <div className='projectItem' key={index}>
+        <img className='projectImg' src={project.thumbnail}></img>
+        <div className='projectTitle'>{project.title}</div>
+        <div className='projSkills'>{project.skills.map(
+            function(obj, key){
+              return (
+                <li className='skillPoint' key={key}>{obj}</li>
+              )
+            }
+          )}
+        </div>
+      </div>
+    )
+  },
   handleSkillFilter() {
     console.log('clicked!');
   },
@@ -56,6 +77,8 @@ const Home = React.createClass({
           githubProps={this.state.github}
           skills={this.state.skills}
           projects={this.state.projects}
+          onListSkills={this.handleListSkills}
+          onListProjects={this.handleListProjects}
           skillFilter={this.handleSkillFilter}
           />
       </div>
