@@ -14,34 +14,10 @@ const HomeUI = React.createClass({
           <a className='githubDisplay' href={this.props.githubProps}>Github</a>
         </div>
         <ul className='skillList'>
-          {this.props.skills.map(
-            function(skill, index){
-              return (
-                <li className='skillItem' key={index}>{skill}</li>
-                )
-            }
-          )}
+          {this.props.skills.map(this.props.onListSkills)}
         </ul>
         <div className='projectsDisplay'>
-          {this.props.projects.map(
-            function(project, index, skills) {
-              console.log(project.skills);
-              return (
-                <div className='projectItem' key={index}>
-                  <img className='projectImg' src={project.thumbnail}></img>
-                  <div className='projectTitle'>{project.title}</div>
-                  <div className='projSkills'>{project.skills.map(
-                      function(obj, key){
-                        return (
-                          <li className='skillPoint' key={key}>{obj}</li>
-                        )
-                      }
-                    )}
-                  </div>
-                </div>
-              )
-            }
-          )}
+          {this.props.projects.map(this.props.onListProjects)}
         </div>
       </div>
     );
