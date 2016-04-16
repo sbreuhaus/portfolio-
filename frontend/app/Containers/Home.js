@@ -2,6 +2,8 @@ import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
 
+var originalProjs;
+
 const Home = React.createClass({
   getInitialState (){
     return {
@@ -9,7 +11,8 @@ const Home = React.createClass({
       linkedIn: '',
       github: '',
       skills: [],
-      projects: []
+      projects: [],
+      origProj: []
     }
   },
   componentDidMount(){
@@ -38,10 +41,12 @@ const Home = React.createClass({
       console.log('the full set of skills is: ', skillsArray);
       this.setState({
         skills: skillsArray,
-        projects: res.data
-      })
+        projects: res.data,
+        origProj: res.data
+      });
       console.log('these are the skills: ', this.state.skills);
       console.log('these are the projects: ', this.state.projects);
+      console.log('these are the skills in the projects: ', this.state.projects[0].skills);
     }.bind(this))
   },
   handleListSkills(skill, index) {
@@ -65,8 +70,16 @@ const Home = React.createClass({
       </div>
     )
   },
-  handleSkillFilter() {
-    console.log('you clicked a skill');
+  handleSkillFilter(e){
+    var filteredProjs = [];
+    for (var i = 0; i < this.state.origProj.length; i++) {
+      if (this.state.origProj[i].skills.indexOf(e.target.innerText) > -1) {
+        filteredProjs.push(this.state.origProj[i]);
+      }
+    }
+    this.setState({
+      projects: filteredProjs
+    })
   },
   handleProjectSelect() {
     console.log('you clicked a project');
