@@ -2,8 +2,6 @@ import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
 
-var originalProjs;
-
 const Home = React.createClass({
   getInitialState (){
     return {
