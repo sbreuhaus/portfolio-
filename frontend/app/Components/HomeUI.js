@@ -9,7 +9,7 @@ const HomeUI = React.createClass({
     return (
       <div className='contentDisplay'>
         <div style={navStyle} className='navigatorDisplay'>
-          <div className='nameDisplay'>{this.props.logoProps}</div>
+          <div className='nameDisplay' onClick={this.props.onRestoreProjects}>{this.props.logoProps}</div>
           <a className='linkedinDisplay' href={this.props.linkedInProps}>Linkedin</a>&nbsp;&nbsp;&nbsp;&nbsp;
           <a className='githubDisplay' href={this.props.githubProps}>Github</a>
         </div>
