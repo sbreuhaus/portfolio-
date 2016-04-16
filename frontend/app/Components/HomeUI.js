@@ -1,7 +1,9 @@
 import React from 'react';
 
-var listSkill = function(skill, index, props) {
-  return <li className='skillItem' onClick={props.skillFilter} key={index}>{skill}</li>;
+var listSkill = function(skill, index, props){
+  return (
+    <li className='skillItem' onClick={props.skillFilter} key={index}>{skill}</li>
+    );
 };
 
 var listProject = function(project, index, skills) {
