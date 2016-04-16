@@ -78,7 +78,7 @@
 .projSkills {
   float: bottom;
   font-size: 14px;
-  display: flex;
+  display: none;
   flex-direction: column-reverse;
   justify-content: flex-end;
   opacity: 0.99;
@@ -100,13 +100,15 @@
 }
 
 .projectItem:hover {
-  opacity: 0.6;
-  -webkit-animation: blur(2px);
-  -moz-animation: blur(2px);
-  -o-animation: blur(2px);
-  -ms-animation: blur(2px);
-  animation: blur(2px);
   cursor: pointer;
+}
+
+.projectItem:hover .projectsDisplay {
+  opacity: 0.5;
+}
+
+.projectItem:hover .projSkills {
+  display: flex;
 }
 
 .footer {

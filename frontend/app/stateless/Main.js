@@ -15,8 +15,15 @@ const Main = (props) => {
         <Link to='/form'>
           <button type='button'>FORM PAGE</button>
         </Link>
+<<<<<<< HEAD
         <Link to='/project'>
           <button type='button'>PROJECTS</button>
+=======
+        <br>
+        </br>
+        <Link to='/project'>
+          <button type='button'>PROJECT PAGE</button>
+>>>>>>> c617038bd1bb8fe4f1255b40d8909cdcd18740d1
         </Link>
       </nav>
       <main>
