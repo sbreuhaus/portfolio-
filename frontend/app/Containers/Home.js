@@ -30,7 +30,9 @@ const Home = React.createClass({
       var skillsArray = [];
       for (var i = 0; i < res.data.length; i++) {
         for (var j = 0; j < res.data[i].skills.length; j++) {
-          skillsArray.push(res.data[i].skills[j]);
+          if (skillsArray.indexOf(res.data[i].skills[j]) === -1) {
+            skillsArray.push(res.data[i].skills[j]);
+          }
         }
       }
       console.log('the full set of skills is: ', skillsArray);
@@ -42,6 +44,9 @@ const Home = React.createClass({
       console.log('these are the projects: ', this.state.projects);
     }.bind(this))
   },
+  handleSkillFilter() {
+    console.log('clicked!');
+  },
   render: function(){
     return (
       <div>
@@ -51,6 +56,7 @@ const Home = React.createClass({
           githubProps={this.state.github}
           skills={this.state.skills}
           projects={this.state.projects}
+          skillFilter={this.handleSkillFilter}
           />
       </div>
     );
