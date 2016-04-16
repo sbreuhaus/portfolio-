@@ -81,9 +81,7 @@
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  width: 100%;
   opacity: 0.99;
-  margin-left: 10px;
   line-height: 20px;
   margin-top: -45px;
   color: white;
@@ -92,6 +90,13 @@
 
 .skillPoint {
   margin-bottom: -45px;
+  /*margin-right: auto;
+  padding-right: 10px;*/
+  width: 40%;
+  background-color: #0A0A0A;
+  padding-left: 10px;
+  height: 18px;
+  opacity: 0.8;
 }
 
 .projectItem:hover {
