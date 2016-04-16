@@ -80,14 +80,18 @@
   font-size: 14px;
   display: flex;
   flex-direction: column-reverse;
-  align-self: flex-start;
+  justify-content: flex-end;
+  width: 100%;
   opacity: 0.99;
   margin-left: 10px;
   line-height: 20px;
+  margin-top: -45px;
+  color: white;
+  margin-bottom: 45px;
 }
 
 .skillPoint {
-
+  margin-bottom: -45px;
 }
 
 .projectItem:hover {
