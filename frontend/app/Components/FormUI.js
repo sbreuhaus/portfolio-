@@ -24,9 +24,9 @@ const FormUI = React.createClass({
           name='github'
           onChange={this.props.onInput}></input><br/>
 
-        <button type='button' name='create' onClick={this.props.onAjaxCall}>Create</button><br/>
-        <button type='button' name='update' onClick={this.props.onAjaxCall}>Edit</button><br/>
-        <button type='button' name='delete' onClick={this.props.onAjaxCall}>Delete</button>
+        <button type='button' className='user-button' name='create' onClick={this.props.onAjaxCall}>Create</button><br/>
+        <button type='button' className='user-button' name='update' onClick={this.props.onAjaxCall}>Edit</button><br/>
+        <button type='button' className='user-button' name='delete' onClick={this.props.onAjaxCall}>Delete</button>
 
         <hr/>
         <h1>Project</h1><br/>
