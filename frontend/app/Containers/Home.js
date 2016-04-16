@@ -2,6 +2,8 @@ import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
 
+var origProjList;
+
 const Home = React.createClass({
   getInitialState (){
     return {
@@ -41,10 +43,9 @@ const Home = React.createClass({
         skills: skillsArray,
         projects: res.data,
         origProj: res.data
-      });
-      console.log('these are the skills: ', this.state.skills);
-      console.log('these are the projects: ', this.state.projects);
-      console.log('these are the skills in the projects: ', this.state.projects[0].skills);
+      }); 
+      origProjList = res.data;
+      console.log('origProjList is ', origProjList);
     }.bind(this))
   },
   handleListSkills(skill, index) {
@@ -79,6 +80,11 @@ const Home = React.createClass({
       projects: filteredProjs
     })
   },
+  handleRestoreProjects(){
+    this.setState({
+      projects: origProjList
+    })
+  },
   handleProjectSelect() {
     console.log('you clicked a project');
   },
@@ -95,6 +101,7 @@ const Home = React.createClass({
           onListProjects={this.handleListProjects}
           skillFilter={this.handleSkillFilter}
           onProjectSelect={this.handleProjectSelect}
+          onRestoreProjects={this.handleRestoreProjects}
           />
       </div>
     );
