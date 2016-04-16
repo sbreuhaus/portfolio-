@@ -1,29 +1,5 @@
 import React from 'react';
 
-var listSkill = function(skill, index, props){
-  return (
-    <li className='skillItem' onClick={props.skillFilter} key={index}>{skill}</li>
-    );
-};
-
-var listProject = function(project, index, skills) {
-  console.log("HEY", project.skills);
-  return (
-    <div className='projectItem' key={index}>
-      <img className='projectImg' src={project.thumbnail}></img>
-      <div className='projectTitle'>{project.title}</div>
-      <div className='projSkills'>{project.skills.map(
-          function(obj, key){
-            return (
-              <li className='skillPoint' key={key}>{obj}</li>
-            )
-          }
-        )}
-      </div>
-    </div>
-  );
-};
-
 var navStyle = {
   display: 'inlineBlock'
 };
@@ -38,10 +14,34 @@ const HomeUI = React.createClass({
           <a className='githubDisplay' href={this.props.githubProps}>Github</a>
         </div>
         <ul className='skillList'>
-          {this.props.skills.map(listSkill)}
+          {this.props.skills.map(
+            function(skill, index){
+              return (
+                <li className='skillItem' key={index}>{skill}</li>
+                )
+            }
+          )}
         </ul>
         <div className='projectsDisplay'>
-          {this.props.projects.map(listProject)}
+          {this.props.projects.map(
+            function(project, index, skills) {
+              console.log(project.skills);
+              return (
+                <div className='projectItem' key={index}>
+                  <img className='projectImg' src={project.thumbnail}></img>
+                  <div className='projectTitle'>{project.title}</div>
+                  <div className='projSkills'>{project.skills.map(
+                      function(obj, key){
+                        return (
+                          <li className='skillPoint' key={key}>{obj}</li>
+                        )
+                      }
+                    )}
+                  </div>
+                </div>
+              )
+            }
+          )}
         </div>
       </div>
     );
