@@ -15,6 +15,9 @@ const Main = (props) => {
         <Link to='/form'>
           <button type='button'>FORM PAGE</button>
         </Link>
+        <Link to='/project'>
+          <button type='button'>PROJECTS</button>
+        </Link>
       </nav>
       <main>
         {props.children}
