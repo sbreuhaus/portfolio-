@@ -49,9 +49,9 @@ const Home = React.createClass({
       <li className='skillItem' onClick={this.handleSkillFilter} key={index}>{skill}</li>
       )
   },
-  handleListProjects(project, index) {
+  handleListProjects(project, index, skills) {
     return (
-      <div className='projectItem' key={index}>
+      <div className='projectItem' onClick={this.handleProjectSelect} key={index}>
         <img className='projectImg' src={project.thumbnail}></img>
         <div className='projectTitle'>{project.title}</div>
         <div className='projSkills'>{project.skills.map(
@@ -66,7 +66,10 @@ const Home = React.createClass({
     )
   },
   handleSkillFilter() {
-    console.log('clicked!');
+    console.log('you clicked a skill');
+  },
+  handleProjectSelect() {
+    console.log('you clicked a project');
   },
   render: function(){
     return (
@@ -80,6 +83,7 @@ const Home = React.createClass({
           onListSkills={this.handleListSkills}
           onListProjects={this.handleListProjects}
           skillFilter={this.handleSkillFilter}
+          onProjectSelect={this.handleProjectSelect}
           />
       </div>
     );
