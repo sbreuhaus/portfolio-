@@ -7,7 +7,7 @@ var listSkill = function(skill, index, props){
 };
 
 var listProject = function(project, index, skills) {
-  console.log(project.skills);
+  console.log("HEY", project.skills);
   return (
     <div className='projectItem' key={index}>
       <img className='projectImg' src={project.thumbnail}></img>

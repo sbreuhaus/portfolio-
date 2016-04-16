@@ -1,6 +1,7 @@
 import React from 'react';
 
 const FormUI = React.createClass({
+
   render(){
     return (
       <div className='navigator'>
