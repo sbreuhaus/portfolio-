@@ -20,6 +20,9 @@ const HomeUI = React.createClass({
         <div className='projectsDisplay'>
           {this.props.projects.map(this.props.onListProjects)}
         </div>
+        <footer className='footer'>
+          <p>This is going to be our footer</p>
+        </footer>
       </div>
     );
   }

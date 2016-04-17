@@ -85,8 +85,9 @@ const Home = React.createClass({
       projects: origProjList
     })
   },
-  handleProjectSelect() {
+  handleProjectSelect(e) {
     console.log('you clicked a project');
+    console.log(e.target);
   },
   render: function(){
     return (

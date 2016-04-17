@@ -4,22 +4,25 @@ const FormUI = React.createClass({
   render(){
     return (
       <div className='navigator'>
-        <h3>navigator</h3><br/>
+        <h3>user data</h3>
         <input
           type='text'
           placeholder='Name'
+          className='userInput'
           name='logoName'
           value={this.props.logoProps}
           onChange={this.props.onInput}></input><br/>
         <input
           type='text'
           placeholder='LinkedIn'
+          className='userInput'
           value={this.props.linkedInProps}
           name='linkedIn'
           onChange={this.props.onInput}></input><br/>
         <input
           type='text'
           placeholder='Github'
+          className='userInput'
           value={this.props.githubProps}
           name='github'
           onChange={this.props.onInput}></input><br/>
@@ -29,8 +32,8 @@ const FormUI = React.createClass({
         <button type='button' name='delete' onClick={this.props.onAjaxCall}>Delete</button><br/><br/>
 
         <hr/>
-        <h3>Project</h3>
-        <p>please choose among the following:</p>
+        <h3>project</h3>
+        <p>Add, edit or delete a project:</p>
         <select onChange={this.props.onProjectChoice}>
           <option disable > -- select an option -- </option>
           <option type="radio" name='project' value="addProject">Add Project </option>

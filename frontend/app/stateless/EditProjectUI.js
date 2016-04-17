@@ -15,21 +15,24 @@ const EditProjectUI = (props) => {
       <br/>
       <div>
         <input
-          placeholder="title"
+          className='projectInput'
+          placeholder="Title"
           onChange={props.onInput}
           name="newTitle"
           value={props.newTitle}>
         </input>
         <br/>
         <input
-          placeholder="image"
+          className='projectInput'
+          placeholder="Thumbnail (300x300)"
           onChange={props.onInput}
           name="newThumbnail"
           value={props.newThumbnail}>
         </input>
         <br/>
         <input
-          placeholder="skills"
+          className='projectInput'
+          placeholder="Skills"
           onChange={props.onInput}
           name="newSkills"
           value={props.newSkills}>
