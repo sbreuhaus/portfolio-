@@ -2,11 +2,14 @@ import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
 import {Link} from 'react-router';
-import Project from '../Components/Project'
+import Project from '../Containers/Project'
 
 var origProjList;
 
 const Home = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
   getInitialState (){
     return {
       logoName: '',
@@ -14,11 +17,7 @@ const Home = React.createClass({
       github: '',
       skills: [],
       projects: [],
-      origProj: [],
-      contextTypes: {
-        router: React.PropTypes.func.isRequired
-      },
-
+      origProj: []
     }
   },
   componentDidMount(){
@@ -112,6 +111,7 @@ const Home = React.createClass({
       }
     }
   },
+
   render: function(){
     return (
       <div>

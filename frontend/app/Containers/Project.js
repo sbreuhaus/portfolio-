@@ -1,6 +1,7 @@
 import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import ProjectUI from '../Components/ProjectUI';
+import {Link} from 'react-router';
 
 const Project = React.createClass({
   getInitialState(){
@@ -8,12 +9,12 @@ const Project = React.createClass({
       getTitle: '',
       getDesc: '',
       getImg: '',
-      getLink: ''
+      getLink: '',
     }
   },
   componentWillMount(){
     const query = this.props.location.query;
-    console.log(query);
+    console.log('query: ', query);
     this.setState({
       getTitle: query.sendTitle,
       getDesc: query.sendDesc,
