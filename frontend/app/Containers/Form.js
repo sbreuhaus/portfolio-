@@ -22,7 +22,7 @@ const Form = React.createClass({
   },
   componentDidMount(){
     helpers.users.getUsers().then(function(res){
-      if (res.data.length === 1) {
+      if (res.data.length > 1) {
         console.log('got more than 1 in the database!');
         this.setState({
           logoName: res.data['0'].name,
