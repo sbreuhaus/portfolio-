@@ -5,6 +5,9 @@ import HomeUI from '../Components/HomeUI';
 var origProjList;
 
 const Home = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState (){
     return {
       logoName: '',
@@ -12,7 +15,7 @@ const Home = React.createClass({
       github: '',
       skills: [],
       projects: [],
-      origProj: []
+      origProj: [],
     }
   },
   componentDidMount(){
@@ -74,6 +77,7 @@ const Home = React.createClass({
     for (var i = 0; i < this.state.origProj.length; i++) {
       if (this.state.origProj[i].skills.indexOf(e.target.innerText) > -1) {
         filteredProjs.push(this.state.origProj[i]);
+        console.log(this.state.origProj[i].skills);
       }
     }
     this.setState({
@@ -88,6 +92,7 @@ const Home = React.createClass({
   handleProjectSelect(e) {
     console.log('you clicked a project');
     console.log(e.target);
+
   },
   render: function(){
     return (
@@ -100,7 +105,6 @@ const Home = React.createClass({
           projects={this.state.projects}
           onListSkills={this.handleListSkills}
           onListProjects={this.handleListProjects}
-          skillFilter={this.handleSkillFilter}
           onProjectSelect={this.handleProjectSelect}
           onRestoreProjects={this.handleRestoreProjects}
           />
