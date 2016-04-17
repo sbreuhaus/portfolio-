@@ -1,12 +1,18 @@
 import React from 'react';
 import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
+import {Link} from 'react-router';
+import Project from '../Containers/Project'
 
 var origProjList;
 
 const Home = React.createClass({
   contextTypes: {
+<<<<<<< HEAD
     router: React.PropTypes.object.isRequired
+=======
+    router: React.PropTypes.func.isRequired
+>>>>>>> 8efbec931a35ef2449634876c128f752328abf0c
   },
   getInitialState (){
     return {
@@ -58,18 +64,20 @@ const Home = React.createClass({
   },
   handleListProjects(project, index, skills) {
     return (
-      <div className='projectItem' onClick={this.handleProjectSelect} key={index}>
-        <img className='projectImg' src={project.thumbnail}></img>
-        <div className='projectTitle'>{project.title}</div>
-        <div className='projSkills'>{project.skills.map(
-            function(obj, key){
-              return (
-                <li className='skillPoint' key={key}>{obj}</li>
-              )
-            }
-          )}
+      <Link to='/project'>
+        <div className='projectItem' onClick={this.handleProjectSelect} key={index}>
+          <img className='projectImg' src={project.thumbnail}></img>
+          <div className='projectTitle'>{project.title}</div>
+          <div className='projSkills'>{project.skills.map(
+              function(obj, key){
+                return (
+                  <li className='skillPoint' key={key}>{obj}</li>
+                )
+              }
+            )}
+          </div>
         </div>
-      </div>
+      </Link>
     )
   },
   handleSkillFilter(e){
@@ -92,8 +100,23 @@ const Home = React.createClass({
   handleProjectSelect(e) {
     console.log('you clicked a project');
     console.log(e.target);
-
+    for (var i = 0; i < this.state.projects.length; i++) {
+      if (e.target.src === this.state.projects[i].thumbnail || e.target.innerText === this.state.projects[i].title){
+        console.log('project title: '+this.state.projects[i].title);
+        console.log('project desc: '+this.state.projects[i].description);
+        this.context.router.push({
+          pathname: '/project',
+          query: {
+            sendTitle: this.state.projects[i].title,
+            sendDesc: this.state.projects[i].description,
+            sendImg: this.state.projects[i].image,
+            sendLink: this.state.projects[i].link
+          }
+        })
+      }
+    }
   },
+
   render: function(){
     return (
       <div>
