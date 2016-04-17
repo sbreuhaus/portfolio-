@@ -4,7 +4,7 @@ const FormUI = React.createClass({
   render(){
     return (
       <div className='navigator'>
-        <h3>navigator</h3><br/>
+        <h3>user data</h3>
         <input
           type='text'
           placeholder='Name'
@@ -32,8 +32,8 @@ const FormUI = React.createClass({
         <button type='button' name='delete' onClick={this.props.onAjaxCall}>Delete</button><br/><br/>
 
         <hr/>
-        <h3>Project</h3>
-        <p>please choose among the following:</p>
+        <h3>project</h3>
+        <p>Add, edit or delete a project:</p>
         <select onChange={this.props.onProjectChoice}>
           <option disable > -- select an option -- </option>
           <option type="radio" name='project' value="addProject">Add Project </option>
