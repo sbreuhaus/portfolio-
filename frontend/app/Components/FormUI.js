@@ -8,18 +8,21 @@ const FormUI = React.createClass({
         <input
           type='text'
           placeholder='Name'
+          className='userInput'
           name='logoName'
           value={this.props.logoProps}
           onChange={this.props.onInput}></input><br/>
         <input
           type='text'
           placeholder='LinkedIn'
+          className='userInput'
           value={this.props.linkedInProps}
           name='linkedIn'
           onChange={this.props.onInput}></input><br/>
         <input
           type='text'
           placeholder='Github'
+          className='userInput'
           value={this.props.githubProps}
           name='github'
           onChange={this.props.onInput}></input><br/>
