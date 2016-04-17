@@ -5,6 +5,10 @@
   list-style-type: none;
 }
 
+.navigator {
+  margin-left: 10%;  
+}
+
 .navigatorDisplay {
   margin-top: 20px;
   margin-bottom: 50px;
@@ -120,25 +124,29 @@
 .prjPage {
   margin-left: 10%;
   width: 900px;
+  font-size: 14px;
 }
 
 .prjPageTitle {
+  font-weight: 600;
+}
 
+.prjPageTxt {
+  width: 700px;
 }
 
 .backButton {
   float: right;
   border: 2px solid lightgray;
-  width: 20px;
+  width: 16px;
   padding-left: 3px;
   padding-right:3px;
-  padding-top:4px;
+  padding-top:2px;
   padding-bottom:2px;
   text-align: center;
-  border-radius: 50%;
   color: darkgray;
   font-weight: 500;
-  margin-top: -26px;
+  margin-top: -40px;
 
 }
 
@@ -148,8 +156,8 @@
   border: 2px solid gray;
 }
 
-.prjPageLink {
-
+.prjPageLink:hover {
+  cursor: pointer;
 }
 
 .prjPageImg {

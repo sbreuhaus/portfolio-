@@ -14,7 +14,10 @@ const Form = React.createClass({
       project: '',
       projectTitle: '',
       projectThumbnail:'',
-      projectSkills: ''
+      projectSkills: '',
+      projectDesc: '',
+      projectImg: '',
+      projectLink: ''
     }
   },
   componentDidMount(){
@@ -97,7 +100,10 @@ const Form = React.createClass({
     const projectToAdd = {
       title: this.state.projectTitle,
       thumbnail: this.state.projectThumbnail,
-      skills: skillsArray
+      skills: skillsArray,
+      description: this.state.projectDesc,
+      image: this.state.projectImg,
+      link: this.state.projectLink
     };
     // inserting obj in db
     helpers.projects.addProject(projectToAdd);

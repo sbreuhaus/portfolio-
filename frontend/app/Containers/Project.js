@@ -5,7 +5,7 @@ import ProjectUI from '../Components/ProjectUI';
 const Project = React.createClass({
   getInitialState(){
     return {
-      
+
     }
   },
   componentDidMount(){
