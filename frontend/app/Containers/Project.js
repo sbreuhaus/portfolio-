@@ -25,7 +25,7 @@ const Project = React.createClass({
   componentWillMount(){
     console.log('this.props.location is ', this.props.location);
     const query = this.props.location.query;
-    console.log('query: ', query.sendTitle);
+    console.log('query: ', query);
     this.setState({
       getTitle: query.sendTitle,
       getDesc: query.sendDesc,
