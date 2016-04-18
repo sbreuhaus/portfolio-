@@ -103,12 +103,12 @@ const Home = React.createClass({
       if (e.target.src === this.state.projects[i].thumbnail || e.target.innerText === this.state.projects[i].title){
         console.log('project title: '+this.state.projects[i].title);
         console.log('project desc: '+this.state.projects[i].description);
-        return (
-          <div>
-            <p>PROJECTS SHOULD DISPLAY</p>
-          </div>
-        )
-
+        this.context.router.push({
+          pathname: '/project',
+          query: {
+            category: this.state.projects
+          }
+        })
       }
     }
   },
@@ -127,7 +127,7 @@ const Home = React.createClass({
           onProjectSelect={this.handleProjectSelect}
           onRestoreProjects={this.handleRestoreProjects}
           />
-        <Project/>
+
       </div>
     );
   }

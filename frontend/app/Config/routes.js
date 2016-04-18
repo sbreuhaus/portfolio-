@@ -12,7 +12,7 @@ const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home}/>
-      <Route path='form' component={Form}/>
+      <Route path='/form' component={Form}/>
       <Route path='/project' component={Project}/>
     </Route>
   </Router>
