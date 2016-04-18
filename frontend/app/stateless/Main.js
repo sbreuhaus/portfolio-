@@ -8,17 +8,17 @@ const Main = (props) => {
     <div className="site-external-wrapper">
       <nav>
         <Link to='/'>
-          <button type='button'>HOME PAGE</button>
+          <button type='button' hidden>HOME PAGE</button>
         </Link>
         <br>
         </br>
         <Link to='/form'>
-          <button type='button'>FORM PAGE</button>
+          <button type='button' hidden>FORM PAGE</button>
         </Link>
         <br>
         </br>
         <Link to='/project'>
-          <button type='button'>PROJECT PAGE</button>
+          <button type='button' hidden>PROJECT PAGE</button>
         </Link>
       </nav>
       <main>
