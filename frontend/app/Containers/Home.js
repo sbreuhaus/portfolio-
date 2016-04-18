@@ -3,12 +3,15 @@ import helpers from '../Utils/ajaxHelpers';
 import HomeUI from '../Components/HomeUI';
 import {Link} from 'react-router';
 import Project from '../Containers/Project'
+import routes from '../Config/routes';
 
 var origProjList;
 
 const Home = React.createClass({
   contextTypes: {
-    router: React.PropTypes.func.isRequired
+    router: function() {
+      return React.PropTypes.object.isRequired;
+    }
   },
   getInitialState (){
     return {
@@ -108,6 +111,7 @@ const Home = React.createClass({
             sendLink: this.state.projects[i].link
           }
         })
+        console.log(this.context);
       }
     }
   },
