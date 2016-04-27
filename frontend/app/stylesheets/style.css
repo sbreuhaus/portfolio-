@@ -169,3 +169,7 @@
 .prjPageImg {
 
 }
+
+.contentDisplay {
+  display: inline-block;
+}

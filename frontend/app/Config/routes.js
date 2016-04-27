@@ -6,7 +6,6 @@ import Main from '../stateless/Main';
 import Home from '../Containers/Home';
 import Form from '../Containers/Form';
 import Project from '../Containers/Project';
-import ProjectUI from '../Components/Project';
 
 const routes = (
   <Router history={hashHistory}>

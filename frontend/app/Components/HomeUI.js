@@ -1,8 +1,5 @@
 import React from 'react';
 
-var navStyle = {
-  display: 'inlineBlock'
-};
 
 const HomeUI = React.createClass({
   render (){
