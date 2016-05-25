@@ -8,8 +8,7 @@ var express             = require('express'),
     mongoURL            = 'mongodb://localhost:27017/' + dbName,
     projectsController  = require('./controllers/projects.js'),
     usersController     = require('./controllers/users.js'),
-
-var PORT = process.env.PORT || 3000; //Heroku
+    PORT                = process.env.PORT || 3000; 
 
 // MIDDLEWARE
 server.use(cors());
